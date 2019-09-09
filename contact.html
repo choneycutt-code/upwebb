@@ -1,0 +1,152 @@
+<!doctype html>
+<!-- https://www.iflexion.com -->
+<!-- https://colorlib.com/demo?theme=dinomuz -->
+<!-- 08. Clean and Highlighted -->
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+  <title>Casey Honeycutt - Web Developer</title>
+  <meta name="description" content="Las vegas based web developer upgrading your website or creating a new one to take your business to the next level.">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+  <div class="site-billboard-container topdiv">
+    <nav class="navbar navbar-fixed-top navbar-expand-lg" id="myScrollspy">
+      <div class="container-fluid" id="nav-fade">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://choneycutt.com/#about" class="link-item">About</a></li>
+            <li><a href="http://choneycutt.com/#portfolio" class="link-item">Portfolio</a></li>
+            <li><a href="http://choneycutt.com/#skills" class="link-item">Skills</a></li>
+            <li><a href="http://choneycutt.com/#contact" class="link-item">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="billboard-contact" id="top">
+      <div class="row-fluid">
+        <div class="col-lg-12 col-sm-12 billboard-contact-textarea">
+          <p class="contact-textarea-title">Hello there!</p>
+          <p class="contact-textarea-text">Thanks for reaching out! I will be in touch with you shortly!</p>
+          <p class="contact-return"><a href="index.html">Return</a></p>
+        </div>
+      </div>
+    </div> <!--Billboard-->
+  </div>
+    <footer class="footer row" style="margin: 0px !important;">
+      <div class="copyright col-lg-12 col-sm-12">
+        <span>&copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>,</span><span> Casey Honeycutt. All Rights Reserved</span>
+      </div>
+    </footer>
+    <script>
+        $(document).ready(function(){
+          if ($(window).width() > 750) {
+            $(window).scroll(function() { // check if scroll event happened
+              if ($(document).scrollTop() > 100) { // check if user scrolled more than 50 from top of the browser window
+                $(".navbar-fixed-top").css("background-color", "#000"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+              } else {
+                $('.navbar-fixed-top').css('background-color', 'transparent');
+                $('.navbar-fixed-top').css('-webkit-transition', 'background-color 350ms linear');
+                $('.navbar-fixed-top').css('-ms-transition', 'background-color 350ms linear');
+                $('.navbar-fixed-top').css('transition', 'background-color 350ms linear'); // if not, change it back to transparent
+              }
+            });
+          } else {
+            $(".navbar-fixed-top").css("background-color", "#000");
+            $(".icon-bar").css("background-color", "white");
+          }
+        });
+    </script>
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $('a[href^="#"]').on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 1000, function(){ //scroll speed
+
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+  <script>
+  $(document).ready(function() {
+      $("#nav-fade").fadeIn(1000);
+      $("#title-1").fadeIn(2000);
+      $("#title-2").fadeIn(2000);
+      $("#btn-1").fadeIn(3000);
+  });
+  </script>
+  <script>
+  $(window).on("load",function() {
+    $(window).scroll(function() {
+      var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+      $(".fade").each(function() {
+        /* Check the location of each desired element */
+        var objectBottom = $(this).offset().top + $(this).outerHeight() - 150;
+
+        /* If the element is completely within bounds of the window, fade it in */
+        if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+          if ($(this).css("opacity")==0) {$(this).fadeTo(1000,1);}
+        } else { //object goes out of view (scrolling up)
+          if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+        }
+      });
+    }).scroll(); //invoke scroll-handler on page-load
+  });
+  </script>
+  <script>
+  function validateForm() {
+      var name = document.forms["contactForm"]["name"].value;
+      var email = document.forms["contactForm"]["email"].value;
+      var subject = document.forms["contactForm"]["subject"].value;
+      var message = document.forms["contactForm"]["message"].value;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (name == "") {
+          document.getElementById("errorMessage").innerHTML = "Please enter a name";
+          return false;
+      } else if (!filter.test(email)) {
+          document.getElementById("errorMessage").innerHTML = "Please enter a valid email address";
+          return false;
+      } else if (message == "") {
+        document.getElementById("errorMessage").innerHTML = "Please enter a message";
+        return false;
+      }
+  }
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
